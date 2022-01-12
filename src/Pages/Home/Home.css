@@ -1,0 +1,47 @@
+.bgcolor{
+   background-color: #eeeeee !important;
+
+}
+
+    .gedf-wrapper {
+      margin-top: 0.97rem;
+    }
+
+    @media (min-width: 992px) {
+      .gedf-main {
+        padding-left: 4rem;
+        padding-right: 4rem;
+      }
+
+      .gedf-card {
+        margin-bottom: 2.77rem;
+      }
+    }
+
+    /**Reset Bootstrap*/
+    .dropdown-toggle::after {
+      content: none;
+      display: none;
+    }
+
+    .appColor{
+      color:#1eb090;
+    }
+
+    .textcolor{
+      color:#1eb090;
+    }
+
+
+    .size-12{
+      font-size: 12px;
+    }
+
+
+    .size-9{
+      font-size: 9px;
+    } 
+    
+    .textcolor-gray{
+      color:rgb(144, 148, 148);
+    }
