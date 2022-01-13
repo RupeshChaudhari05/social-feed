@@ -37,11 +37,27 @@
       font-size: 12px;
     }
 
+.size-19{
+   font-size: 19px;
+}
 
     .size-9{
       font-size: 9px;
     } 
+
+      .size-10 {
+        font-size: 10px;
+      }
     
     .textcolor-gray{
       color:rgb(144, 148, 148);
+    }
+
+
+    .textend{
+      text-align: end;
+    }
+
+    .baground-white{
+      background-color: white;
     }

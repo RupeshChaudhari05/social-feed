@@ -1,3 +1,9 @@
+
+import {
+  BsBookmark, BsFillTvFill, BsFillQuestionCircleFill, BsCalendarEvent
+
+} from "react-icons/bs";
+
 const LeftFeed = () => {
 
   return <>
@@ -19,21 +25,41 @@ const LeftFeed = () => {
 
 <hr></hr>
 
-<label className="size-9 textcolor-gray">Library</label>
+  <label className="size-10 textcolor-gray">Library</label>
           <div className="">
 
-                <div className="card py-3">
-                    
+                <div className=""> 
+                <div className = "size-12 p-1">
+                 
+                  <label className="baground-white p-2"><BsBookmark></BsBookmark></label> 
+                  <label  className="m-2"><b>My Bookmark</b></label>
+                </div>
 
+                <div className= "size-12 p-1" >
+                  <label className="baground-white p-2"><BsFillTvFill></BsFillTvFill></label> 
+                  <label className="m-2"><b>News & Articles</b></label>
+                </div>
 
+  <div className= "size-12 p-1" >
+                  <label className="baground-white p-2"><BsFillQuestionCircleFill></BsFillQuestionCircleFill></label> 
+                  <label className="m-2"><b>FAQ's</b></label>
+                </div>
+
+  <div className= "size-12 p-1" >
+                  <label className="baground-white p-2"><BsCalendarEvent></BsCalendarEvent></label> 
+                  <label className="m-2"><b>News & Articles</b></label>
+                </div>
 
 
                 
                 </div>
+
+
+
             </div>
 
 
-            </div>
+</div>
 
 
            
