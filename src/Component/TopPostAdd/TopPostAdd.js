@@ -17,6 +17,7 @@ const TopPostAdd = ({ setfeedlist, filterMyData, setsearch }) => {
   const [show, setShow] = useState(false)
   const [image, setImage] = useState([])
   const [imageURL, setImageURL] = useState([])
+  const [errors, setErrors] = useState({ tagsError:''})
 
   // form fields
   const [postData, setPostData] = useState('')
@@ -61,7 +62,10 @@ const TopPostAdd = ({ setfeedlist, filterMyData, setsearch }) => {
       }
     }
     if (checkArray.length === 0) {
-      alert("At list any one tag You have to select")
+      //alert("At list any one tag You have to select")
+     
+      setErrors({ tagsError:'At least any one tag You have to select'})
+     
       return false
     }
 
@@ -82,6 +86,7 @@ const TopPostAdd = ({ setfeedlist, filterMyData, setsearch }) => {
     ])
     setImageURL([])
     setShow(false)
+    setPostData('')
     setTags({
       trietment: false,
       Lifestyle: false,
@@ -164,6 +169,7 @@ const TopPostAdd = ({ setfeedlist, filterMyData, setsearch }) => {
 
                   <input type="checkbox" className="btn-check" name="tags" id="success-outlined4" autoComplete="off" onChange={() => toggelTags("treatment")} checked={tags.treatment} />
                   <label className="btn btn-outline-success m-2" htmlFor="success-outlined4">Treatment</label>
+                  <label className='text-color'>{errors.tagsError}</label>
                 </div>
                 <hr></hr>
                 <div className='size-19 flot-r' >

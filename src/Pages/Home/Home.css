@@ -1,11 +1,16 @@
-.bgcolor {
-  background-color: #eeeeee !important;
-
-}
+  .bgcolor {
+    background-color: #eeeeee !important;
+    height: 100vh;    
+  }
 
 
     .gedf-wrapper {
       margin-top: 0.97rem;
+    }
+
+    .text-color{
+      color: red;
+      font-size: small;
     }
 
     @media (min-width: 992px) {
@@ -19,7 +24,7 @@
       }
     }
 
-    /**Reset Bootstrap*/
+
     .dropdown-toggle::after {
       content: none;
       display: none;
