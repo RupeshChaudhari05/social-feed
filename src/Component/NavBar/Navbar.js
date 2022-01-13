@@ -1,4 +1,4 @@
-import { BsFillChatSquareFill, BsFillOctagonFill, BsSearch, BsFillFileEarmarkRichtextFill, BsFillDashCircleFill, BsUmbrella } from "react-icons/bs";
+import { BsFillChatSquareFill, BsFillOctagonFill, BsSearch, BsFillFileEarmarkRichtextFill, BsUmbrella } from "react-icons/bs";
 import './NavBar.css';
 const Navbar = () => {
   return <>
@@ -20,7 +20,7 @@ const Navbar = () => {
      
         <ul className="nav navbar-left">
           <li className="mx-2"><BsFillFileEarmarkRichtextFill></BsFillFileEarmarkRichtextFill> Feed</li>
-          <li><BsFillDashCircleFill></BsFillDashCircleFill> Community</li>
+         
           </ul>
           <ul className="nav navbar-right">
           <li><BsSearch></BsSearch></li>
