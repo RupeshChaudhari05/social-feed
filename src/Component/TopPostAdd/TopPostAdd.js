@@ -12,7 +12,7 @@ import Form from 'react-bootstrap/Form'
 import { v4 as uuidv4 } from 'uuid';
 import Filter from './Filtar';
 
-const TopPostAdd = ({ setfeedlist, filterMyData, setsearch}) => {
+const TopPostAdd = ({ setfeedlist, filterMyData, setsearch }) => {
 
   const [show, setShow] = useState(false)
   const [image, setImage] = useState([])
@@ -75,7 +75,7 @@ const TopPostAdd = ({ setfeedlist, filterMyData, setsearch}) => {
       tags: checkArray,
       datetime: datetime
     }
-  //console.log(data);
+
     setfeedlist(previousList => [
       ...previousList,
       data
@@ -95,13 +95,13 @@ const TopPostAdd = ({ setfeedlist, filterMyData, setsearch}) => {
     <>
       <div className='card'>
         <div className='py-3 textcolor size-22' >
-          <lable className='mx-2' onClick={() => setShow(true)}> <BsFillPencilFill className='mx-2'></BsFillPencilFill><label> Post </label></lable >  |
-          <lable className='mx-2'> <BsFillPatchQuestionFill className='mx-2'> </BsFillPatchQuestionFill><label> Ask quations </label > </lable >  |
-          <lable className='mx-2'> <BsFillBarChartFill className='mx-2'> </BsFillBarChartFill><label> Poll </label > </lable>  |
-          <lable className='mx-2'> <BsFillCalendarCheckFill className='mx-2'> </BsFillCalendarCheckFill><label> Event </label > </lable>
+          <label className='mx-2' onClick={() => setShow(true)}> <BsFillPencilFill className='mx-2'></BsFillPencilFill>  Post </label >  |
+          <label className='mx-2'> <BsFillPatchQuestionFill className='mx-2'> </BsFillPatchQuestionFill> Ask quations </label >  |
+          <label className='mx-2'> <BsFillBarChartFill className='mx-2'> </BsFillBarChartFill> Poll  </label>  |
+          <label className='mx-2'> <BsFillCalendarCheckFill className='mx-2'> </BsFillCalendarCheckFill> Event  </label>
         </div>
         <div className='row mx-2 py-2'>
-          <Form Form onClick={
+          <Form onClick={
             () => setShow(true)
           } >
             <Form.Group className="mb-3">
@@ -123,23 +123,24 @@ const TopPostAdd = ({ setfeedlist, filterMyData, setsearch}) => {
         <Modal.Body>
           <div className='card'>
             <div className='py-3 textcolor size-22' >
-              <lable className='mx-2'> <BsFillPencilFill className='mx-2'></BsFillPencilFill><label> Post </label></lable >  |
-              <lable className='mx-2'> <BsFillPatchQuestionFill className='mx-2'> </BsFillPatchQuestionFill><label> Ask quations </label > </lable >  |
-              <lable className='mx-2'> <BsFillBarChartFill className='mx-2'> </BsFillBarChartFill><label> Poll </label > </lable>  |
-              <lable className='mx-2'> <BsFillCalendarCheckFill className='mx-2'> </BsFillCalendarCheckFill><label> Event </label > </lable>
+              <label className='mx-2'> <BsFillPencilFill className='mx-2'></BsFillPencilFill><label> Post </label></label >  |
+              <label className='mx-2'> <BsFillPatchQuestionFill className='mx-2'> </BsFillPatchQuestionFill><label> Ask quations </label > </label >  |
+              <label className='mx-2'> <BsFillBarChartFill className='mx-2'> </BsFillBarChartFill><label> Poll </label > </label>  |
+              <label className='mx-2'> <BsFillCalendarCheckFill className='mx-2'> </BsFillCalendarCheckFill><label> Event </label > </label>
             </div>
           </div>
           <div className='row py-2'>
             <form onSubmit={saveFormData}>
-              <div class="form-group">
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(e) => setPostData(e.target.value)}></textarea>
+              <div className="form-group">
+                <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(e) => setPostData(e.target.value)} value={postData}></textarea>
               </div>
+
               <div className='py-3'>
                 {
-                  imageURL.map(imageSrc => <><div id="box">
+                  imageURL.map((imageSrc, index) => <div id="box" key={index}>
                     <div onClick={resetImage}>
                       <BsFileExcel></BsFileExcel>
-                    </div><img src={imageSrc} height={150} width={150} alt='' /></div></>)
+                    </div><img src={imageSrc} height={150} width={150} alt='' /></div>)
                 }
               </div>
               <div className='size-11 flot-r'>
@@ -148,24 +149,24 @@ const TopPostAdd = ({ setfeedlist, filterMyData, setsearch}) => {
               </div>
               <div className='py-3 appColor'>
                 <label>Add topics that describe your post</label>
-                <div div class="form-group py-3" >
-                  <input type="checkbox" class="btn-check" name="tags" id="success-outlined" autocomplete="off" onChange={() => toggelTags("news")} checked={tags.news} />
-                  <label class="btn btn-outline-success m-2" for="success-outlined">News</label>
+                <div className="form-group py-3" >
+                  <input type="checkbox" className="btn-check" name="tags" id="success-outlined" autoComplete="off" onChange={() => toggelTags("news")} checked={tags.news} />
+                  <label className="btn btn-outline-success m-2" htmlFor="success-outlined">News</label>
 
-                  <input type="checkbox" class="btn-check" name="tags" id="success-outlined1" autocomplete="off" onChange={() => toggelTags("diet")} checked={tags.dite} />
-                  <label class="btn btn-outline-success m-2" for="success-outlined1">Diet</label>
+                  <input type="checkbox" className="btn-check" name="tags" id="success-outlined1" autoComplete="off" onChange={() => toggelTags("diet")} checked={tags.dite} />
+                  <label className="btn btn-outline-success m-2" htmlFor="success-outlined1">Diet</label>
 
-                  <input type="checkbox" class="btn-check" name="tags" id="success-outlined2" autocomplete="off" onChange={() => toggelTags("Lifestyle")} checked={tags.Lifestyle} />
-                  <label class="btn btn-outline-success m-2" for="success-outlined2">Lifestyle</label>
+                  <input type="checkbox" className="btn-check" name="tags" id="success-outlined2" autoComplete="off" onChange={() => toggelTags("Lifestyle")} checked={tags.Lifestyle} />
+                  <label className="btn btn-outline-success m-2" htmlFor="success-outlined2">Lifestyle</label>
 
-                  <input type="checkbox" class="btn-check" name="tags" id="success-outlined3" autocomplete="off" onChange={() => toggelTags("symptons")} checked={tags.symptons} />
-                  <label class="btn btn-outline-success m-2" for="success-outlined3">Symptoms</label>
+                  <input type="checkbox" className="btn-check" name="tags" id="success-outlined3" autoComplete="off" onChange={() => toggelTags("symptons")} checked={tags.symptons} />
+                  <label className="btn btn-outline-success m-2" htmlFor="success-outlined3">Symptoms</label>
 
-                  <input type="checkbox" class="btn-check" name="tags" id="success-outlined4" autocomplete="off" onChange={() => toggelTags("treatment")} checked={tags.treatment} />
-                  <label class="btn btn-outline-success m-2" for="success-outlined4">Treatment</label>
+                  <input type="checkbox" className="btn-check" name="tags" id="success-outlined4" autoComplete="off" onChange={() => toggelTags("treatment")} checked={tags.treatment} />
+                  <label className="btn btn-outline-success m-2" htmlFor="success-outlined4">Treatment</label>
                 </div>
                 <hr></hr>
-                <div div className='size-19 flot-r' >
+                <div className='size-19 flot-r' >
                   <button type='submit' className='btn btn-success'>POST</button>
                 </div>
               </div>

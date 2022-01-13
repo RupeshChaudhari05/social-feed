@@ -1,13 +1,13 @@
+import { Suspense, lazy } from "react";
 import LeftFeed from '../../Component/LeftFeed/LeftFeed';
 import Navbar from '../../Component/NavBar/Navbar';
-import PostList from '../../Component/PostList/PostList';
 import RightFeed from '../../Component/RightFeed/RightFeed';
 import './Home.css';
-import {
-  useState
-} from "react";
+const PostList = lazy(() => import("../../Component/PostList/PostList"));
+
 
 const Home = () => {
+
 
   return <>
     <div className='bgcolor' >
@@ -16,12 +16,10 @@ const Home = () => {
         <div className="row py-3">
 
           <LeftFeed></LeftFeed>
-
+          <Suspense fallback={<div>Loading...</div>}>
           <PostList></PostList>
-
+          </Suspense>
           <RightFeed></RightFeed>
-
-
 
         </div>
       </div>

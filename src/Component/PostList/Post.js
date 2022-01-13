@@ -5,8 +5,8 @@ import {
 } from "react-icons/bs";
 
 
-const Post = (props) => {
-  const { id, post, image, tags } = props.data
+const Post = ({ deltePost, data}) => {
+  const { id, post, image, tags } = data
 
   return (
   <>
@@ -18,7 +18,7 @@ const Post = (props) => {
       <div className="d-flex justify-content-between align-items-center">
         <div className="d-flex justify-content-between align-items-center">
           <div div className="mr-2 px-2" >
-            <img className="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="" />
+            <img className="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="user" />
           </div>
           <div div className="ml-2" >
             <div className="h5 m-0">Patient</div>
@@ -27,10 +27,10 @@ const Post = (props) => {
         </div>
 
         <div className="pr-5">
-          <div div class="dropdown-container float-right" tabindex="-1" >
+          <div className="dropdown-container float-right" tabIndex= '-1' >
             <BsThreeDotsVertical></BsThreeDotsVertical>
-            <div class="dropdown p-2">
-              <div onClick={() => props.deltePost(id)} className="size-10">Delete</div>
+            <div className="dropdown p-2">
+              <div onClick={() => deltePost(id)} className="size-10">Delete</div>
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@ const Post = (props) => {
             post
           }
         </p>
-        <img alt='Image' src={image} height={350} width={600} />
+          <img alt='Image' src={image} className="img-fluid" />
         <div className="size-10 py-2 appColor"><BsFillGeoAltFill></BsFillGeoAltFill> <label><b>Ratnagiri,Maharashtra,India</b></label></div>
       </div>
 
