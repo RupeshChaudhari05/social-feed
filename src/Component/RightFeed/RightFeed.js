@@ -1,8 +1,9 @@
 const RightFeed =()=>{
 
-  return<>
+  return(
+  <>
     
-  </>
+  </>)
 
 }
 

@@ -7,24 +7,24 @@ import {
   useState
 } from "react";
 
-const Home =()=>{
-  
-  return<>
-  <div className = 'bgcolor' >
+const Home = () => {
+
+  return <>
+    <div className='bgcolor' >
       <Navbar></Navbar>
-       <div className="container gedf-wrapper">
+      <div className="container gedf-wrapper">
         <div className="row py-3">
-           
-<LeftFeed></LeftFeed>
 
-            <PostList></PostList>
+          <LeftFeed></LeftFeed>
 
-<RightFeed></RightFeed>
-          
+          <PostList></PostList>
+
+          <RightFeed></RightFeed>
+
 
 
         </div>
-    </div>
+      </div>
     </div>
   </>
 }
