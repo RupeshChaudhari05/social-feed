@@ -17,7 +17,7 @@ const TopPostAdd = ({ setfeedlist, filterMyData, setsearch }) => {
   const [show, setShow] = useState(false)
   const [image, setImage] = useState([])
   const [imageURL, setImageURL] = useState([])
-  const [errors, setErrors] = useState({ tagsError:''})
+  const [errors, setErrors] = useState({ tagsError: '' })
 
   // form fields
   const [postData, setPostData] = useState('')
@@ -63,9 +63,9 @@ const TopPostAdd = ({ setfeedlist, filterMyData, setsearch }) => {
     }
     if (checkArray.length === 0) {
       //alert("At list any one tag You have to select")
-     
-      setErrors({ tagsError:'At least any one tag You have to select'})
-     
+
+      setErrors({ tagsError: 'At least any one tag You have to select' })
+
       return false
     }
 
@@ -88,7 +88,7 @@ const TopPostAdd = ({ setfeedlist, filterMyData, setsearch }) => {
     setShow(false)
     setPostData('')
     setTags({
-      trietment: false,
+      treatment: false,
       Lifestyle: false,
       symptons: false,
       diet: false,

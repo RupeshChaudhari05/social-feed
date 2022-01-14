@@ -8,7 +8,6 @@ const PostList = lazy(() => import("../../Component/PostList/PostList"));
 
 const Home = () => {
 
-
   return <>
     <div className='bgcolor' >
       <Navbar></Navbar>

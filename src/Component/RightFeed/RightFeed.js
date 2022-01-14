@@ -2,7 +2,6 @@ const RightFeed =()=>{
 
   return(
   <>
-    
   </>)
 
 }

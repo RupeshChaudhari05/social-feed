@@ -6,8 +6,6 @@ import TopPostAdd from "../TopPostAdd/TopPostAdd"
 import { getLocalItems } from "../../Helper/Index";
 import Post from "./Post";
 
-
-
 const PostList = () => {
 
   const [feedlistdata, setfeedlist] = useState(getLocalItems())
@@ -18,13 +16,13 @@ const PostList = () => {
   }, [feedlistdata])
 
   const deltePost = (postId) => {
-    console.log(feedlistdata, postId)
+    //console.log(feedlistdata, postId)
     const deltedarray = feedlistdata.filter(item => item.id !== postId)
     setfeedlist(deltedarray)
   }
 
   const filterMyData = (name) => {
-    console.log(name)
+    //console.log(name)
     setsearch(name)
     const ee = feedlistdata.map((element) => {
       return { ...element, tags: element.tags.filter((item) => item.toLowerCase() === name.toLowerCase()) }
@@ -37,15 +35,20 @@ const PostList = () => {
     return new Date(b.datetime) - new Date(a.datetime);
   })
 
+  function NoFeeds() {
+    return <h5>No Feeds Available...</h5>;
+  }
+
+
   return (
     <>
       <div className="col-md-6 gedf-main">
         <TopPostAdd setfeedlist={setfeedlist} filterMyData={filterMyData} setsearch={setsearch}></TopPostAdd>
 
         {
-          (finaldata.length> 0) ? finaldata.map((item, index) => {
+          (finaldata.length !== 0) ? finaldata.map((item, index) => {
             return <Post key={index} data={item} deltePost={deltePost}></Post>
-          }) : <div><h5>No Feeds Available...</h5></div>
+          }) : <NoFeeds></NoFeeds>
 
         }
       </div>
